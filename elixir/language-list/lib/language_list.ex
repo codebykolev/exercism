@@ -21,6 +21,9 @@ defmodule LanguageList do
   end
 
   def functional_list?(list) do
-    Enum.member?(list, @functional_language)
+    cond do
+      @functional_language in list -> true
+      @functional_language not in list -> false
+    end
   end
 end
